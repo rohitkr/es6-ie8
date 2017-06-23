@@ -18,32 +18,27 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            plugins: [
-              ['transform-es3-member-expression-literals'],
-              ['transform-es3-property-literals'],
-              ['transform-proto-to-assign'],
-              ['transform-runtime', {
-                helpers: false,
-                polyfill: true,
-                regenerator: false
-              }],
-              // ['add-module-exports']
+            "plugins": [
+              ["transform-es3-member-expression-literals"],
+              ["transform-es3-property-literals"],
+              ["transform-proto-to-assign"],
+              ["transform-runtime", {
+                "helpers": true,
+                "polyfill": true,
+                "regenerator": true
+              }]
             ],
-            presets: [
-              ['env', {
-                targets: {
-                  browsers: ['> 0.2%']
+            "presets": [
+              ["env", {
+                "targets": {
+                  "browsers": ["> 0.2%"]
                 },
-                _modules: false,
-                loose: true
+                "modules": false,
+                "loose": true
               }]
             ]
-          },
-          // options: {
-          //   presets: [['env', {
-          //     _modules: false
-          //   }]]
-          // }
+          }
+
         }
       }]
     },
@@ -53,20 +48,20 @@ module.exports = {
     devtool: 'source-map',
     plugins: [
 
-      new webpack.optimize.UglifyJsPlugin({
-        mangle: false,
-        mangleProperties: {
-          screw_ie8: false,
-          ignore_quoted: true
-        },
-        compress: {
-          screw_ie8: false,
-          properties: false
-        },
-        output: {
-          screw_ie8: false
-        }
-      }),
+      // new webpack.optimize.UglifyJsPlugin({
+      //   mangle: false,
+      //   mangleProperties: {
+      //     screw_ie8: false,
+      //     ignore_quoted: true
+      //   },
+      //   compress: {
+      //     screw_ie8: false,
+      //     properties: false
+      //   },
+      //   output: {
+      //     screw_ie8: false
+      //   }
+      // }),
 
       // new BundleAnalyzer.BundleAnalyzerPlugin({
       //   analyzerMode: 'static',

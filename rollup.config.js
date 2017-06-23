@@ -1,9 +1,9 @@
-import babel from 'rollup-plugin-babel';
+// import babel from 'rollup-plugin-babel';
 // import uglify from 'rollup-plugin-uglify';
-import json from 'rollup-plugin-json';
-import resolve from 'rollup-plugin-node-resolve';
+// import json from 'rollup-plugin-json';
+// import resolve from 'rollup-plugin-node-resolve';
 import commonjs from "rollup-plugin-commonjs";
-import nodeResolve from "rollup-plugin-node-resolve";
+// import nodeResolve from "rollup-plugin-node-resolve";
 
 
 var babelOptions = {
@@ -35,14 +35,14 @@ var babelOptions = {
 export default {
   	moduleName: 'thing',
   	entry:      'src/index.js',
-	dest:       'dist/bundle.js',
+    dest:       'dist/bundle.js',
   	sourceMap:  true,
   	format:     'es',
   	plugins:    [
-		json(),
+		  // json(),
     	// resolve(),
     	// babel(babelOptions),
-    	// commonjs(),
+    	commonjs(),
     	// nodeResolve()
   	],
   	external: ['window', 'document', 'body', 'console']
