@@ -479,48 +479,8 @@ var polyfill = function () {
   }
 
   return function () {};
-};
-
-polyfill();
-
-/* eslint-enable no-extend-native, no-eq-null, new-cap */
-
-/* greetings.js */
-
-const sayHello = () => {
-  console.log('Hello');
-};
-
-const π = 3.14159;
-const e = 2.71828;
-const φ = 1.61803;
-const λ = 1.30357;
-
-var constants = Object.freeze({
-	π: π,
-	e: e,
-	φ: φ,
-	λ: λ
-});
-
-// import {sayHello} from './lib'
-// In some cases, you don't know which exports will
-// be accessed until you actually run the code. In
-// these cases, Rollup creates a namespace object
-// for dynamic lookup
-
-Object.keys( constants ).forEach( key => {
-	console.log( `The value of ${key} is ${constants[key]}` );
-});
-
-
-function fun () {
-  var element = document.createElement('div');
-  element.innerHTML = 'JavaScript ES6 module bundle for IE-8 Successful';
-  sayHello();
-
-  return element
 }
 
-document.body.appendChild(fun());
-//# sourceMappingURL=bundle.js.map
+export default polyfill();
+
+/* eslint-enable no-extend-native, no-eq-null, new-cap */

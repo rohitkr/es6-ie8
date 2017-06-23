@@ -1,7 +1,7 @@
 // import {sayHello} from './lib'
+import * as pfill from './polyfill';
+
 import * as sayHello from './lib'
-
-
 import * as constants from './constants';
 
 // In some cases, you don't know which exports will
@@ -16,10 +16,10 @@ Object.keys( constants ).forEach( key => {
 
 function fun () {
   var element = document.createElement('div')
-  element.innerHTML = 'JavaScript ES6 module bundle for IE-8'
+  element.innerHTML = 'JavaScript ES6 module bundle for IE-8 Successful'
   sayHello.sayHello();
 
   return element
 }
 
-document.body.appendChild(fun())
+document.body.appendChild(fun());

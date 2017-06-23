@@ -37,13 +37,13 @@ export default {
   	entry:      'src/index.js',
 	dest:       'dist/bundle.js',
   	sourceMap:  true,
-  	format:     'umd',
+  	format:     'es',
   	plugins:    [
 		json(),
-    	resolve(),
-    	babel(babelOptions),
-    	commonjs(),
-    	nodeResolve()
+    	// resolve(),
+    	// babel(babelOptions),
+    	// commonjs(),
+    	// nodeResolve()
   	],
   	external: ['window', 'document', 'body', 'console']
 };

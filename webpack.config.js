@@ -3,10 +3,10 @@ const webpack = require('webpack')
 const BundleAnalyzer = require('webpack-bundle-analyzer');
 
 module.exports = {
-    entry: ['./src/index.js'],
+    entry: ['./dist/bundle.js'],
     output: {
       path: path.join(__dirname, '/dist'),
-      filename: 'bundle.js',
+      filename: 'bundle-webpack.js',
       // library: conf.library,
       libraryTarget: 'umd',
       umdNamedDefine: true
