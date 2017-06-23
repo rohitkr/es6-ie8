@@ -14,6 +14,12 @@ Object.keys( constants ).forEach( key => {
 	console.log( `The value of ${key} is ${constants[key]}` );
 });
 
+[1,2,43,5].forEach(k => {
+	console.log(k);
+});
+
+console.log(sayHello.default);
+
 cjs();
 
 function fun () {

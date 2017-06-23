@@ -1,14 +1,14 @@
-// import babel from 'rollup-plugin-babel';
+import babel from 'rollup-plugin-babel';
 // import uglify from 'rollup-plugin-uglify';
 // import json from 'rollup-plugin-json';
-// import resolve from 'rollup-plugin-node-resolve';
+import resolve from 'rollup-plugin-node-resolve';
 import commonjs from "rollup-plugin-commonjs";
 // import nodeResolve from "rollup-plugin-node-resolve";
 
 
 var babelOptions = {
-	runtimeHelpers: true,
-	externalHelpers: true,
+	runtimeHelpers: false,
+	externalHelpers: false,
 	exclude: 'node_modules/**', // only transpile our source code
   "plugins": [
     ["transform-es3-member-expression-literals"],
@@ -34,14 +34,14 @@ var babelOptions = {
 
 export default {
   	moduleName: 'thing',
-  	entry:      'src/index.js',
+  	entry:     [ 'src/index.js'],
     dest:       'dist/bundle.js',
-  	sourceMap:  true,
-  	format:     'es',
+  	// sourceMap:  true,
+  	format:     'umd',
   	plugins:    [
 		  // json(),
-    	// resolve(),
-    	// babel(babelOptions),
+    	resolve(),
+    	babel(babelOptions),
     	commonjs(),
     	// nodeResolve()
   	],
