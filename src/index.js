@@ -1,6 +1,7 @@
 // import {sayHello} from './lib'
 // import * as pfill from './polyfill';
 
+// import * as pf from './polyfill';
 import * as sayHello from './lib'
 import * as constants from './constants';
 import cjs from './cjs';
@@ -31,3 +32,8 @@ function fun () {
 }
 
 document.body.appendChild(fun());
+
+
+export default function () {
+	console.log('this is a ES-6 modules');
+}

@@ -7,7 +7,8 @@
       "helpers": true,
       "polyfill": true,
       "regenerator": true
-    }]
+    }],
+    ["add-module-exports"]
   ],
   "presets": [
     ["env", {

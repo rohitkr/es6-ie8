@@ -3,11 +3,11 @@ const webpack = require('webpack')
 const BundleAnalyzer = require('webpack-bundle-analyzer');
 
 module.exports = {
-    entry: ['./dist/bundle.js'],
+    entry: ['./src/index.js'],
     output: {
       path: path.join(__dirname, '/dist'),
-      filename: 'bundle-webpack.js',
-      // library: conf.library,
+      filename: 'bundle.js',
+      library: 'ES6Module',
       libraryTarget: 'umd',
       umdNamedDefine: true
     },
@@ -26,14 +26,15 @@ module.exports = {
                 "helpers": true,
                 "polyfill": true,
                 "regenerator": true
-              }]
+              }],
+              ['add-module-exports']
             ],
             "presets": [
               ["env", {
                 "targets": {
                   "browsers": ["> 0.2%"]
                 },
-                "modules": false,
+                "_modules": false,
                 "loose": true
               }]
             ]

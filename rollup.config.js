@@ -33,8 +33,8 @@ var babelOptions = {
 
 
 export default {
-  	moduleName: 'thing',
-  	entry:     [ 'src/index.js'],
+  	moduleName: 'ES6Module',
+  	entry:     'src/index.js',
     dest:       'dist/bundle.js',
   	// sourceMap:  true,
   	format:     'umd',
