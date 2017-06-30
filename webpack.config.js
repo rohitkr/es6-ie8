@@ -23,11 +23,11 @@ module.exports = {
               ["transform-es3-property-literals"],
               ["transform-proto-to-assign"],
               ["transform-runtime", {
-                "helpers": true,
+                "helpers": false,
                 "polyfill": true,
-                "regenerator": true
+                "regenerator": false
               }],
-              ['add-module-exports']
+              ["add-module-exports"]
             ],
             "presets": [
               ["env", {
@@ -39,7 +39,6 @@ module.exports = {
               }]
             ]
           }
-
         }
       }]
     },
@@ -49,20 +48,20 @@ module.exports = {
     devtool: 'source-map',
     plugins: [
 
-      // new webpack.optimize.UglifyJsPlugin({
-      //   mangle: false,
-      //   mangleProperties: {
-      //     screw_ie8: false,
-      //     ignore_quoted: true
-      //   },
-      //   compress: {
-      //     screw_ie8: false,
-      //     properties: false
-      //   },
-      //   output: {
-      //     screw_ie8: false
-      //   }
-      // }),
+      new webpack.optimize.UglifyJsPlugin({
+        mangle: false,
+        mangleProperties: {
+          screw_ie8: false,
+          ignore_quoted: true
+        },
+        compress: {
+          screw_ie8: false,
+          properties: false
+        },
+        output: {
+          screw_ie8: false
+        }
+      }),
 
       // new BundleAnalyzer.BundleAnalyzerPlugin({
       //   analyzerMode: 'static',

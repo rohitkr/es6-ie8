@@ -1,10 +1,10 @@
 // import {sayHello} from './lib'
 // import * as pfill from './polyfill';
 
-// import * as pf from './polyfill';
+import * as pf from './polyfill';
 import * as sayHello from './lib'
-import * as constants from './constants';
 import cjs from './cjs';
+import * as constants from './constants';
 
 // In some cases, you don't know which exports will
 // be accessed until you actually run the code. In

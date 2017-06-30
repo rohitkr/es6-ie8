@@ -8,12 +8,13 @@ import commonjs from "rollup-plugin-commonjs";
 
 var babelOptions = {
 	runtimeHelpers: false,
-	externalHelpers: false,
+	externalHelpers: true,
 	exclude: 'node_modules/**', // only transpile our source code
   "plugins": [
     ["transform-es3-member-expression-literals"],
     ["transform-es3-property-literals"],
     ["transform-proto-to-assign"],
+    ["external-helpers"],
     ["transform-runtime", {
       "helpers": false,
       "polyfill": true,

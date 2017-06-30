@@ -4,9 +4,9 @@
     ["transform-es3-property-literals"],
     ["transform-proto-to-assign"],
     ["transform-runtime", {
-      "helpers": true,
+      "helpers": false,
       "polyfill": true,
-      "regenerator": true
+      "regenerator": false
     }],
     ["add-module-exports"]
   ],
@@ -15,7 +15,7 @@
       "targets": {
         "browsers": ["> 0.2%"]
       },
-      "modules": false,
+      "_modules": false,
       "loose": true
     }]
   ]
