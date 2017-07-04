@@ -35,7 +35,7 @@ var babelOptions = {
 
 export default {
   	moduleName: 'ES6Module',
-  	entry:     'src/index.js',
+  	entry:     'src/main.js',
     dest:       'dist/bundle.js',
   	// sourceMap:  true,
   	format:     'umd',

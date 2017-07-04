@@ -11,7 +11,7 @@ var livereload  = require('gulp-livereload');
  
 gulp.task('build', function () {
     // app.js is your main JS file with all your module inclusions
-    return browserify({entries: './src/index.js', debug: true})
+    return browserify({entries: './src/main.js', debug: true})
         .transform("babelify", {
           "plugins": [
           ["transform-es3-member-expression-literals"],
