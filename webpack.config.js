@@ -39,7 +39,7 @@ module.exports = {
               "targets": {
                 "browsers": ["> 0.2%"]
               },
-              "modules": false, // 
+              "_modules": false, // 
               "loose": true
             }]
           ]

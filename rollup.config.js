@@ -33,11 +33,26 @@ var babelOptions = {
 }
 
 
+babelOptions = {
+  presets: [
+    [
+      "es2015", {
+        "modules": false
+      }
+    ]
+  ],
+  babelrc: false,
+  exclude: 'node_modules/**'
+};
+
+
+
 export default {
   	moduleName: 'ES6Module',
   	entry:     'src/main.js',
     dest:       'dist/bundle.js',
   	// sourceMap:  true,
+    exports: 'default',
   	format:     'umd',
   	plugins:    [
 		  // json(),
