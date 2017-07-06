@@ -28,7 +28,7 @@ module.exports = {
               "polyfill": true,
               "regenerator": false
             }],
-            ["add-module-exports"]
+            // ["add-module-exports"]
           ],
           // Note: modules: false: enables tree-shaking but stops exporting Library name
           // and _modules: false: Works fine but tree-shaking doesn't work.

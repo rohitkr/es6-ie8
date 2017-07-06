@@ -1,5 +1,5 @@
 import pf from './polyfill';
-import A from './class';
+import {default as A} from './class';
 import {default as lib, sayHello, sayBye} from './index';
 
 var here = sayHello;
