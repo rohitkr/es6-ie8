@@ -1,22 +1,18 @@
-// webpack.config.js
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack')
 
-module.exports = {  
-  entry: ['./src/main.js'],
+module.exports = {
+  entry: ['./src/index.js'],
   output: {
-    path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
-    library: 'ES6Module',
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
-    rules: [
-      {
-        test: /\.(js)$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: "babel-loader",
         options: {
           "plugins": [
             ["transform-es3-member-expression-literals"],
@@ -29,31 +25,38 @@ module.exports = {
             }],
             ["add-module-exports"]
           ],
-          // Note: modules: false: enables tree-shaking but stops exporting Library name
-          // and _modules: false: Works fine but tree-shaking doesn't work.
-          // presets: [ 
-          //   [ 'es2015', { modules: false } ] 
-          // ],
           "presets": [
             ["env", {
               "targets": {
                 "browsers": ["> 0.2%"]
               },
-              "_modules": false, // 
+              "_modules": false,
               "loose": true
             }]
           ]
         }
       }
-    ]
+    }]
   },
-  plugins: [ new HtmlWebpackPlugin({ title: 'Tree-shaking' }) ],
-  devtool: 'source-map',
-  profile: true,
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: false,
+      mangleProperties: {
+        screw_ie8: false,
+        ignore_quoted: true
+      },
+      compress: {
+        screw_ie8: false,
+        properties: false
+      },
+      output: {
+        screw_ie8: false
+      }
+    })
+  ],
   devServer: {
     contentBase: './sample',
     watchContentBase: true,
     disableHostCheck: true
   }
-};
-
+}

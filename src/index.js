@@ -1,7 +1,12 @@
-import {default as lib, sayHello, sayBye, sayHelloName, sayByeName, sayES6, sayJavaScript} from './lib';
-import cjs from './cjs';
-import * as constants from './constants';
+import B from './b'
+import { car } from './c'
 
-export { sayHello, sayBye, sayHelloName, sayByeName, sayES6, sayJavaScript, cjs, constants };
+function fun () {
+  var element = document.createElement('div')
+  element.innerHTML = 'Heya all!!!!'
+  new B().foo()
+  car()
+  return element
+}
 
-export default lib;
+document.body.appendChild(fun())
