@@ -8,6 +8,7 @@ module.exports = {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
     library: 'ES6Module',
+    libraryExport: 'default',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
@@ -39,7 +40,7 @@ module.exports = {
               "targets": {
                 "browsers": ["> 0.2%"]
               },
-              "_modules": false, // 
+              "modules": false, // 
               "loose": true
             }]
           ]
@@ -47,7 +48,23 @@ module.exports = {
       }
     ]
   },
-  plugins: [ new HtmlWebpackPlugin({ title: 'Tree-shaking' }) ],
+  plugins: [
+    // new webpack.optimize.UglifyJsPlugin({
+    //   mangle: false,
+    //   mangleProperties: {
+    //     screw_ie8: false,
+    //     ignore_quoted: true
+    //   },
+    //   compress: {
+    //     screw_ie8: false,
+    //     properties: false
+    //   },
+    //   output: {
+    //     screw_ie8: false
+    //   }
+    // }),
+    new HtmlWebpackPlugin({ title: 'Tree-shaking' })
+  ],
   devtool: 'source-map',
   profile: true,
   devServer: {
