@@ -8,4 +8,11 @@ class A {
   }
 }
 
+class C extends A {
+	constructor () {
+		super();
+		this.name = 'this is class c';
+	}
+}
+
 export default A

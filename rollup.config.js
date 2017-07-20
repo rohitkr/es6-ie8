@@ -7,43 +7,33 @@ import commonjs from "rollup-plugin-commonjs";
 
 
 var babelOptions = {
-	runtimeHelpers: false,
-	externalHelpers: true,
-	exclude: 'node_modules/**', // only transpile our source code
-  "plugins": [
-    ["transform-es3-member-expression-literals"],
-    ["transform-es3-property-literals"],
-    ["transform-proto-to-assign"],
-    ["external-helpers"],
-    ["transform-runtime", {
-      "helpers": false,
-      "polyfill": true,
-      "regenerator": false
-    }]
-  ],
-  "presets": [
-    ["env", {
-      "targets": {
-        "browsers": ["> 0.2%"]
-      },
-      "modules": false,
-      "loose": true
-    }]
-  ]
-}
-
-
-babelOptions = {
-  presets: [
-    [
-      "es2015", {
-        "modules": false
-      }
+    // runtimeHelpers: false,
+    // externalHelpers: true,
+    exclude: ['node_modules/**', 'develop/vendors/**/node_modules/**'],
+    // exclude: 'node_modules/**', // only transpile our source code
+    'plugins': [
+      ['transform-es3-member-expression-literals'],
+      ['transform-es3-property-literals'],
+      // ['transform-proto-to-assign'],
+      ['external-helpers']
+      // ['transform-runtime', {
+      //   'helpers': false,
+      //   'polyfill': true,
+      //   'regenerator': false
+      // }]
+    ],
+    'babelrc': false,
+    'presets': [
+      ['env', {
+        'targets': {
+          'browsers': ['> 0.2%']
+        },
+        'modules': false,
+        'loose': true
+      }]
     ]
-  ],
-  babelrc: false,
-  exclude: 'node_modules/**'
-};
+  };
+
 
 
 
